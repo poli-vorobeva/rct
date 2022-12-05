@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="34042b5b-c860-48bf-9cf7-89eb8b61989c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/client/module.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/reducer/usersReducer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/requests/usersRequests.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/App.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/Board.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/store/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/webpack.config.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/client" />
+  </component>
+  <component name="ProjectId" id="2IUeJbkgky1TRoBiSHofsoCkZbf" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../FE/code/projects/durak" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="C:\Users\poli8\Desktop\TradeRoom\client\node_modules\typescript\lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\poli8\Desktop\TradeRoom\server\src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.server">
+    <configuration name="serve" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/client/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="serve" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="server" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/server/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="server" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.server" />
+        <item itemvalue="npm.serve" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="34042b5b-c860-48bf-9cf7-89eb8b61989c" name="Default Changelist" comment="" />
+      <created>1670240518041</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1670240518041</updated>
+      <workItem from="1670240519396" duration="2733000" />
+      <workItem from="1670243648731" duration="411000" />
+      <workItem from="1670244073500" duration="5877000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="495" y="103" key="FileChooserDialogImpl" timestamp="1670244314984">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="495" y="103" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1670244314984" />
+    <state width="1326" height="267" key="GridCell.Tab.0.bottom" timestamp="1670245630165">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="1326" height="267" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1670245630165" />
+    <state width="1326" height="267" key="GridCell.Tab.0.center" timestamp="1670245630164">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="1326" height="267" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1670245630164" />
+    <state width="1326" height="267" key="GridCell.Tab.0.left" timestamp="1670245630164">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="1326" height="267" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1670245630164" />
+    <state width="1326" height="267" key="GridCell.Tab.0.right" timestamp="1670245630164">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="1326" height="267" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1670245630164" />
+  </component>
+</project>
