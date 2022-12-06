@@ -23,8 +23,7 @@
       <change beforePath="$PROJECT_DIR$/client/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/tsconfig.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/webpack.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/SocketService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SocketServer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/server.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/SocketServer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SocketServer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +31,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/client" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="2IUeJbkgky1TRoBiSHofsoCkZbf" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -76,8 +75,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.serve" />
         <item itemvalue="npm.server" />
+        <item itemvalue="npm.serve" />
       </list>
     </recent_temporary>
   </component>
@@ -94,7 +93,7 @@
       <workItem from="1670240519396" duration="2733000" />
       <workItem from="1670243648731" duration="411000" />
       <workItem from="1670244073500" duration="9108000" />
-      <workItem from="1670311069586" duration="1732000" />
+      <workItem from="1670311069586" duration="11742000" />
     </task>
     <servers />
   </component>
@@ -118,21 +117,21 @@
       <screen x="0" y="0" width="1536" height="816" />
     </state>
     <state x="495" y="103" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1670244314984" />
-    <state width="1507" height="158" key="GridCell.Tab.0.bottom" timestamp="1670311973013">
+    <state width="1454" height="224" key="GridCell.Tab.0.bottom" timestamp="1670328128772">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1507" height="158" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1670311973013" />
-    <state width="1507" height="158" key="GridCell.Tab.0.center" timestamp="1670311973013">
+    <state width="1454" height="224" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1670328128772" />
+    <state width="1454" height="224" key="GridCell.Tab.0.center" timestamp="1670328128772">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1507" height="158" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1670311973013" />
-    <state width="1507" height="158" key="GridCell.Tab.0.left" timestamp="1670311973013">
+    <state width="1454" height="224" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1670328128772" />
+    <state width="1454" height="224" key="GridCell.Tab.0.left" timestamp="1670328128772">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1507" height="158" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1670311973013" />
-    <state width="1507" height="158" key="GridCell.Tab.0.right" timestamp="1670311973013">
+    <state width="1454" height="224" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1670328128772" />
+    <state width="1454" height="224" key="GridCell.Tab.0.right" timestamp="1670328128772">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1507" height="158" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1670311973013" />
+    <state width="1454" height="224" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1670328128772" />
   </component>
 </project>
