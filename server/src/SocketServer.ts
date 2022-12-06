@@ -14,8 +14,7 @@ export interface IServerResponseMessage {
 }
 
 let active = 0
-const limit = 10
-const connections = []
+let connections = []
 
 class Bot {
 	time: number
@@ -30,9 +29,29 @@ class Bot {
 		this.money = money
 	}
 
-	public addTime(num) {
-		console.log("frombot ",num)
-				this.time = num
+	actionStep() {
+		return Math.floor(Math.random() * range.to)+1
+	}
+
+	isBet() {
+		return !!Math.round(Math.random())
+	}
+	botAction(connections: connection[]) {
+		const isBet = this.isBet()
+		return async () => {
+			for await (let value of range) {
+				if(value===this.actionStep()){
+
+				}
+				if (!value) {
+					console.log('end')
+				}
+				this.time = value
+				connections.forEach(c => {
+					sendResponse(c, 'onAddConnection', JSON.stringify({users, activeUser: active}))
+				})
+			}
+		}
 	}
 
 }
@@ -45,9 +64,13 @@ let range = {
 	from: 1,
 	to: 5,
 	async* [Symbol.asyncIterator]() {
-		for (let value = this.from; value <= this.to; value++) {
+		for (let value = this.from; value <= this.to + 1; value++) {
 			await new Promise(resolve => setTimeout(resolve, 1000));
-			yield value;
+			if (value === this.to + 1) {
+				yield
+			} else {
+				yield value;
+			}
 		}
 	}
 };
@@ -66,30 +89,19 @@ export class SocketServer {
 				if (!connections.includes(connection)) {
 					console.log('already')
 					connections.push(connection)
-					this.sendResponse(connection, 'onAddConnection', JSON.stringify({users, activeUser: active}))
+					sendResponse(connection, 'onAddConnection', JSON.stringify({users, activeUser: active}))
 					//this.sendResponse(connection, 'time', `${i}`)
 				}
 
 				if (connections.length == 1) {
-					(async () => {
-						for await (let value of range) {
-							if(!value){
-								console.log('end')
-							}
-							users[active].addTime(value)
-							connections.forEach(c=>{
-								this.sendResponse(c, 'onAddConnection', JSON.stringify({users, activeUser: active}))
-
-							})
-
-						}
-					})();
-					//console.log('$$##',users[active].getTime())
-					// users[active].addTime()
-					// 	.then(r => {
-					// 		console.log("&^^^")
-					// 		this.sendResponse(connection, 'onAddConnection', JSON.stringify({users, activeUser: active}))
-					// 	})
+					const r = async () => {
+						const t = users[active].botAction(connections)()
+						t.then(() => {
+							active + 1 < users.length ? active++ : active = 0
+							r()
+						})
+					}
+					r()
 
 				}
 				connection.on('message', (_message) => {
@@ -100,8 +112,7 @@ export class SocketServer {
 						);
 
 						if (requestMessage.type === 'message') {
-							console.log("istmess-----", requestMessage.content)
-							this.sendResponse(connection, 'answr', JSON.stringify(users))
+							sendResponse(connection, 'answr', JSON.stringify(users))
 						}
 					} else {
 						throw new Error('Not utf8');
@@ -109,24 +120,19 @@ export class SocketServer {
 				});
 
 				connection.on('close', (reasonCode, description) => {
+					connections = connections.filter(c => c != connection)
 					console.log('Client has disconnected.');
 				});
 			}
 		);
 	}
 
-	sendResponse(client
-								 :
-								 connection, type
-								 :
-								 string, stringContenrt
-								 :
-								 string
-	) {
-		const responseMessage: IServerResponseMessage = {
-			type: type,
-			content: stringContenrt,
-		};
-		client.sendUTF(JSON.stringify(responseMessage));
-	}
+}
+
+function sendResponse(client: connection, type: string, stringContent: string) {
+	const responseMessage: IServerResponseMessage = {
+		type: type,
+		content: stringContent,
+	};
+	client.sendUTF(JSON.stringify(responseMessage));
 }
