@@ -11,7 +11,14 @@ export interface IServerResponseMessage {
 	content: string;
 }
 
-export class SocketService {
+const users= [
+	{name:'bob',money:20202},
+	{name:'tom',money:555022},
+	{name:'jey',money:33003}
+]
+const connections=new Set()
+
+export class SocketServer {
 	constructor(server: http.Server) {
 		const wsServer = new websocket.server({
 			httpServer: server,
@@ -19,6 +26,8 @@ export class SocketService {
 
 		wsServer.on('request', (request) => {
 			const connection = request.accept(undefined, request.origin);
+			connections.add(connection)
+
 			connection.on('message', (_message) => {
 				if (_message.type === 'utf8') {
 					const message = _message as IUtf8Message;
@@ -27,7 +36,8 @@ export class SocketService {
 					);
 
 					if (requestMessage.type === 'message') {
-					//
+						console.log("istmess-----",requestMessage.content)
+						this.sendResponse(connection,'answr',JSON.stringify(users))
 					}
 				} else {
 					throw new Error('Not utf8');
