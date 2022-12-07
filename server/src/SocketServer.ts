@@ -29,48 +29,60 @@ class Bot {
 		this.money = money
 	}
 
+	randomSum() {
+		const sum = Math.round(Math.random() * 100)
+		return sum < this.money ? sum : this.money
+	}
+
 	actionStep() {
-		return Math.floor(Math.random() * range.to)+1
+		return Math.floor(Math.random() * range.to) + 1
 	}
 
 	isBet() {
 		return !!Math.round(Math.random())
 	}
+
 	botAction(connections: connection[]) {
-		const isBet = this.isBet()
+		console.log("botAction")
 		return async () => {
 			for await (let value of range) {
-				if(value===this.actionStep()){
-
+				if (value === this.actionStep()) {
+					this.money -= this.randomSum()
 				}
-				if (!value) {
-					console.log('end')
+				if (value && value !== this.time) {
+					console.log('val', value, '-----activ', active)
+					this.time = value
+					console.log(connections.length,'##$$#')
+					connections.forEach(c => {
+						console.log('------!!!',connections.length)
+						sendResponse(c, 'onAddConnection',
+							JSON.stringify({users, activeUser: active}))
+					})
 				}
-				this.time = value
-				connections.forEach(c => {
-					sendResponse(c, 'onAddConnection', JSON.stringify({users, activeUser: active}))
-				})
 			}
 		}
 	}
-
 }
 
-const users = [new Bot(0, 'Jou', 2222344),
+//todo stop bots
+//todo delete overstep in generator
+let users = [
+	new Bot(0, 'Jou', 2222344),
 	new Bot(1, 'Mary', 121244),
-	new Bot(2, 'Nick', 299344)]
-
+	new Bot(2, 'Nick', 299344)
+]
+let timeout = null
 let range = {
-	from: 1,
-	to: 5,
+	from: 12,
+	to: 0,
 	async* [Symbol.asyncIterator]() {
-		for (let value = this.from; value <= this.to + 1; value++) {
-			await new Promise(resolve => setTimeout(resolve, 1000));
-			if (value === this.to + 1) {
-				yield
-			} else {
-				yield value;
+		for (let value = this.from; value > this.to; value--) {
+			if (timeout) {
+				clearTimeout(timeout)
+				timeout = null
 			}
+			await new Promise(resolve => timeout = setTimeout(resolve, 1000));
+			yield value;
 		}
 	}
 };
@@ -82,15 +94,9 @@ export class SocketServer {
 		});
 		wsServer.on('request', (request) => {
 				const connection = request.accept(undefined, request.origin);
-				//connections.forEach(c=> this.sendResponse(connection, 'onAddConnection', JSON.stringify({users, activeUser: active})))
-
-//одни получет управление и дальше он всем кроме себя рассылает свое текущее время каждую секунду, потом
-				//ход переходит ко второму и так по кругу.
 				if (!connections.includes(connection)) {
-					console.log('already')
 					connections.push(connection)
 					sendResponse(connection, 'onAddConnection', JSON.stringify({users, activeUser: active}))
-					//this.sendResponse(connection, 'time', `${i}`)
 				}
 
 				if (connections.length == 1) {
@@ -98,12 +104,23 @@ export class SocketServer {
 						const t = users[active].botAction(connections)()
 						t.then(() => {
 							active + 1 < users.length ? active++ : active = 0
-							r()
+							if (!!connections.length) r()
+							else {
+								users = [
+									new Bot(0, 'Jou', 2222344),
+									new Bot(1, 'Mary', 121244),
+									new Bot(2, 'Nick', 299344)]
+								active = 0
+							}
 						})
 					}
 					r()
-
 				}
+				if (connections.length === 0 && timeout) {
+					clearTimeout(timeout)
+					timeout = null
+				}
+
 				connection.on('message', (_message) => {
 					if (_message.type === 'utf8') {
 						const message = _message as IUtf8Message;
@@ -120,8 +137,9 @@ export class SocketServer {
 				});
 
 				connection.on('close', (reasonCode, description) => {
-					connections = connections.filter(c => c != connection)
-					console.log('Client has disconnected.');
+					//connections = connections.filter(c => c != connection)
+					connections.splice(connections.indexOf(connection),1)
+					console.log("CLOSE")
 				});
 			}
 		);
