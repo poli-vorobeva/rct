@@ -15,18 +15,28 @@ export interface IServerResponseMessage {
 
 let active = 0
 let connections = []
-
 class Bot {
 	time: number
 	index: number
 	name: string
 	money: number
-
-	constructor(index, name, money) {
+	payMethod:string
+	isActive:boolean
+	guaranty:string
+	prodTime:string
+	isMakeBet:boolean
+	missedRound:number
+	constructor(index, name, money,pay,guaranty,prodTime) {
 		this.index = index
-		this.time = 0
+		this.time = 120
 		this.name = name
 		this.money = money
+		this.payMethod=pay
+		this.guaranty=guaranty
+		this.prodTime=prodTime
+		this.isActive=true
+		this.isMakeBet=false
+		this.missedRound=0
 	}
 
 	randomSum() {
@@ -35,7 +45,7 @@ class Bot {
 	}
 
 	actionStep() {
-		return Math.floor(Math.random() * range.to) + 1
+		return Math.floor(Math.random() * range.from)
 	}
 
 	isBet() {
@@ -43,18 +53,25 @@ class Bot {
 	}
 
 	botAction(connections: connection[]) {
-		console.log("botAction")
+		const stepToAct=this.actionStep()
 		return async () => {
 			for await (let value of range) {
-				if (value === this.actionStep()) {
-					this.money -= this.randomSum()
+				if (value === stepToAct) {
+					if(this.isBet()){
+						this.money -= this.randomSum()
+						this.missedRound= !!this.missedRound && 0
+						this.isActive=true
+						this.isMakeBet=true
+					}else{
+						this.isActive=false
+						this.missedRound+=1
+					}
+				}else if (value !== stepToAct){
+					this.isMakeBet=false
 				}
 				if (value && value !== this.time) {
-					console.log('val', value, '-----activ', active)
 					this.time = value
-					console.log(connections.length,'##$$#')
 					connections.forEach(c => {
-						console.log('------!!!',connections.length)
 						sendResponse(c, 'onAddConnection',
 							JSON.stringify({users, activeUser: active}))
 					})
@@ -63,13 +80,11 @@ class Bot {
 		}
 	}
 }
-
-//todo stop bots
-//todo delete overstep in generator
 let users = [
-	new Bot(0, 'Jou', 2222344),
-	new Bot(1, 'Mary', 121244),
-	new Bot(2, 'Nick', 299344)
+	new Bot(0, 'Jou', 2222344,'50% наличные 50% безнал','да','5 месяцев'),
+	new Bot(1, 'Mary', 121244,'100% безнал','10 месяцев','6 месяцев'),
+	new Bot(2, 'Fairy', 121244,'100% безнал','12 месяцев','6 месяцев'),
+	new Bot(3, 'Jerry', 29044,'в кредит','нет','2месяца')
 ]
 let timeout = null
 let range = {
@@ -98,20 +113,12 @@ export class SocketServer {
 					connections.push(connection)
 					sendResponse(connection, 'onAddConnection', JSON.stringify({users, activeUser: active}))
 				}
-
 				if (connections.length == 1) {
 					const r = async () => {
 						const t = users[active].botAction(connections)()
 						t.then(() => {
 							active + 1 < users.length ? active++ : active = 0
 							if (!!connections.length) r()
-							else {
-								users = [
-									new Bot(0, 'Jou', 2222344),
-									new Bot(1, 'Mary', 121244),
-									new Bot(2, 'Nick', 299344)]
-								active = 0
-							}
 						})
 					}
 					r()
@@ -120,31 +127,12 @@ export class SocketServer {
 					clearTimeout(timeout)
 					timeout = null
 				}
-
-				connection.on('message', (_message) => {
-					if (_message.type === 'utf8') {
-						const message = _message as IUtf8Message;
-						const requestMessage: IServerRequestMessage = JSON.parse(
-							message.utf8Data
-						);
-
-						if (requestMessage.type === 'message') {
-							sendResponse(connection, 'answr', JSON.stringify(users))
-						}
-					} else {
-						throw new Error('Not utf8');
-					}
-				});
-
 				connection.on('close', (reasonCode, description) => {
-					//connections = connections.filter(c => c != connection)
 					connections.splice(connections.indexOf(connection),1)
-					console.log("CLOSE")
 				});
 			}
 		);
 	}
-
 }
 
 function sendResponse(client: connection, type: string, stringContent: string) {

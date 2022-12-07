@@ -16,8 +16,13 @@
       <change afterPath="$PROJECT_DIR$/client/reducer/usersReducer.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/client/requests/usersRequests.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/client/src/App.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/Board.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/TimerComponent.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/Board/Board.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/Board/TimerComponent.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/Board/Tr.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/Board/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/StartScreen/StartScreen.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/StartScreen/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/styles.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/client/store/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/index.html" afterDir="false" />
@@ -33,6 +38,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="ProjectId" id="2IUeJbkgky1TRoBiSHofsoCkZbf" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -50,6 +56,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\poli8\Desktop\TradeRoom\client\src\StartScreen" />
+      <recent name="C:\Users\poli8\Desktop\TradeRoom\client\src\Board" />
       <recent name="C:\Users\poli8\Desktop\TradeRoom\server\src" />
     </key>
   </component>
@@ -76,8 +84,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.server" />
         <item itemvalue="npm.serve" />
+        <item itemvalue="npm.server" />
       </list>
     </recent_temporary>
   </component>
@@ -94,7 +102,7 @@
       <workItem from="1670240519396" duration="2733000" />
       <workItem from="1670243648731" duration="411000" />
       <workItem from="1670244073500" duration="9108000" />
-      <workItem from="1670311069586" duration="31971000" />
+      <workItem from="1670311069586" duration="47019000" />
     </task>
     <servers />
   </component>
@@ -114,29 +122,41 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="484" y="189" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1670402769659">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="484" y="189" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.816@0.0.1536.816" timestamp="1670402769659" />
+    <state x="281" y="93" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1670405413740">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="281" y="93" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.816@0.0.1536.816" timestamp="1670405413740" />
     <state x="495" y="103" key="FileChooserDialogImpl" timestamp="1670244314984">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
     <state x="495" y="103" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1670244314984" />
-    <state width="1507" height="315" key="GridCell.Tab.0.bottom" timestamp="1670355720528">
+    <state width="1507" height="146" key="GridCell.Tab.0.bottom" timestamp="1670426761325">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1507" height="315" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1670355720528" />
-    <state width="1507" height="315" key="GridCell.Tab.0.center" timestamp="1670355720527">
+    <state width="1507" height="146" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1670426761325" />
+    <state width="1507" height="146" key="GridCell.Tab.0.center" timestamp="1670426761325">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1507" height="315" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1670355720527" />
-    <state width="1507" height="315" key="GridCell.Tab.0.left" timestamp="1670355720527">
+    <state width="1507" height="146" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1670426761325" />
+    <state width="1507" height="146" key="GridCell.Tab.0.left" timestamp="1670426761325">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1507" height="315" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1670355720527" />
-    <state width="1507" height="315" key="GridCell.Tab.0.right" timestamp="1670355720528">
+    <state width="1507" height="146" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1670426761325" />
+    <state width="1507" height="146" key="GridCell.Tab.0.right" timestamp="1670426761325">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1507" height="315" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1670355720528" />
-    <state x="408" y="66" width="714" height="684" key="find.popup" timestamp="1670345029649">
+    <state width="1507" height="146" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1670426761325" />
+    <state x="555" y="0" key="RollbackChangesDialog" timestamp="1670401878462">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state x="408" y="66" width="714" height="684" key="find.popup/0.0.1536.816@0.0.1536.816" timestamp="1670345029649" />
+    <state x="555" y="0" key="RollbackChangesDialog/0.0.1536.816@0.0.1536.816" timestamp="1670401878462" />
+    <state x="408" y="66" width="714" height="684" key="find.popup" timestamp="1670401596442">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="408" y="66" width="714" height="684" key="find.popup/0.0.1536.816@0.0.1536.816" timestamp="1670401596442" />
   </component>
 </project>
