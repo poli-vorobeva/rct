@@ -2,7 +2,7 @@ import * as React from "react";
 import Board from "./Board/Board";
 import {useDispatch} from "react-redux";
 import {useEffect, useState} from "react";
-import {SocketModel} from "../SocketModel";
+import {SocketModel} from "../../SocketModel";
 import StartScreen from "./StartScreen/StartScreen";
 import styles from './styles.css'
 

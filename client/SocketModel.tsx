@@ -1,5 +1,5 @@
-import {tUsers} from "./requests/usersRequests";
-import {tOnConnect} from "./src/App";
+import {tUsers} from "./client/requests/usersRequests";
+import {tOnConnect} from "./client/src/App";
 
 export interface IServerResponseMessage {
 	type: string;

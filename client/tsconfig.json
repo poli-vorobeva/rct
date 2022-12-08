@@ -11,6 +11,6 @@
     "esModuleInterop": true
   },
   "files": [
-    "src/index.tsx","./module.d.ts"
+    "client/src/index.tsx","./module.d.ts"
   ]
 }
