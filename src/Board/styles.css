@@ -1,0 +1,40 @@
+.boardWrapper{
+    background-color: #c8c28f;
+    width: 90vw;
+    min-width: 400px;
+    margin: 0 auto;
+
+    border-radius: 20px;
+    box-shadow: 0 0 20px 2px #194f5a;
+}
+.boardWrapper table{
+    margin: 0 auto;
+    padding: 20px;
+    width: 90%;
+}
+.boardWrapper button{
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    position: absolute;
+    bottom: 10px;
+    text-transform: uppercase;
+    background: #535310;
+    color: #ede4d7;
+    box-shadow: 0 0 10px 1px wheat;
+    transition: all 500ms ease;
+}
+.boardWrapper button:hover{
+    box-shadow: 0 0 10px 2px wheat;
+}
+.tableRow{
+    background: #535310;
+    color: #ede4d7;
+}
+.tableRow th{
+    padding: 5px;
+    min-width: 80px;
+}
+.burn{
+    mix-blend-mode: color-burn;
+}

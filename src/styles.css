@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.appWrapper{
+   background: linear-gradient(to right top, #c74005, #b07e00, #8caa2e, #5bce82, #12ebd8);
+    width: 100vw;
+    height: 100vh;
+    padding-top: 30px;
+}
+button{
+    cursor: pointer;
+}
