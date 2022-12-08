@@ -29,7 +29,6 @@
       <change beforePath="$PROJECT_DIR$/client/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/tsconfig.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/webpack.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/SocketServer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SocketServer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +36,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/client" />
     <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="ProjectId" id="2IUeJbkgky1TRoBiSHofsoCkZbf" />
@@ -50,7 +49,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../FE/code/projects/durak" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../serverTrading" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="C:\Users\poli8\Desktop\TradeRoom\client\node_modules\typescript\lib" />
   </component>
@@ -61,7 +60,17 @@
       <recent name="C:\Users\poli8\Desktop\TradeRoom\server\src" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.serve">
+  <component name="RunManager" selected="npm.build:prod">
+    <configuration name="build:prod" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/client/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build:prod" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="serve" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/client/package.json" />
       <command value="run" />
@@ -84,6 +93,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.build:prod" />
         <item itemvalue="npm.serve" />
         <item itemvalue="npm.server" />
       </list>
@@ -103,6 +113,8 @@
       <workItem from="1670243648731" duration="411000" />
       <workItem from="1670244073500" duration="9108000" />
       <workItem from="1670311069586" duration="47019000" />
+      <workItem from="1670426880982" duration="8467000" />
+      <workItem from="1670480324311" duration="1462000" />
     </task>
     <servers />
   </component>
@@ -130,33 +142,33 @@
       <screen x="0" y="0" width="1536" height="816" />
     </state>
     <state x="281" y="93" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.816@0.0.1536.816" timestamp="1670405413740" />
-    <state x="495" y="103" key="FileChooserDialogImpl" timestamp="1670244314984">
+    <state x="495" y="103" key="FileChooserDialogImpl" timestamp="1670427652904">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state x="495" y="103" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1670244314984" />
-    <state width="1507" height="146" key="GridCell.Tab.0.bottom" timestamp="1670426761325">
+    <state x="495" y="103" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1670427652904" />
+    <state width="1507" height="228" key="GridCell.Tab.0.bottom" timestamp="1670481579805">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1507" height="146" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1670426761325" />
-    <state width="1507" height="146" key="GridCell.Tab.0.center" timestamp="1670426761325">
+    <state width="1507" height="228" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1670481579805" />
+    <state width="1507" height="228" key="GridCell.Tab.0.center" timestamp="1670481579805">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1507" height="146" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1670426761325" />
-    <state width="1507" height="146" key="GridCell.Tab.0.left" timestamp="1670426761325">
+    <state width="1507" height="228" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1670481579805" />
+    <state width="1507" height="228" key="GridCell.Tab.0.left" timestamp="1670481579805">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1507" height="146" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1670426761325" />
-    <state width="1507" height="146" key="GridCell.Tab.0.right" timestamp="1670426761325">
+    <state width="1507" height="228" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1670481579805" />
+    <state width="1507" height="228" key="GridCell.Tab.0.right" timestamp="1670481579805">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1507" height="146" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1670426761325" />
+    <state width="1507" height="228" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1670481579805" />
     <state x="555" y="0" key="RollbackChangesDialog" timestamp="1670401878462">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
     <state x="555" y="0" key="RollbackChangesDialog/0.0.1536.816@0.0.1536.816" timestamp="1670401878462" />
-    <state x="408" y="66" width="714" height="684" key="find.popup" timestamp="1670401596442">
+    <state x="408" y="66" width="714" height="684" key="find.popup" timestamp="1670480681880">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state x="408" y="66" width="714" height="684" key="find.popup/0.0.1536.816@0.0.1536.816" timestamp="1670401596442" />
+    <state x="408" y="66" width="714" height="684" key="find.popup/0.0.1536.816@0.0.1536.816" timestamp="1670480681880" />
   </component>
 </project>
